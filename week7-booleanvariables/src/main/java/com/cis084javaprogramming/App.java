@@ -12,31 +12,28 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        boolean teacher = false, isOver65 = false, hasMedical = false, eligible = false;
+        boolean teacher, isOver65, hasMedical;
+        String eligible;
 
         Scanner input = new Scanner(System.in);
         System.out.println("Are you a teacher? (Y/N): ");
-        String answer = input.nextLine();
-        if (answer.toLowerCase() == "y") {
-            teacher = true;
-            System.out.println("Are you over 65 years old? (Y/N): ");
-            answer = input.nextLine();
-            if (answer.toLowerCase() == "y") {
-                isOver65 = true;
-            }
-            System.out.println("Do you have a medical condition? (Y/N): ");
-            answer = input.nextLine();
-            if (answer.toLowerCase() == "y") {
-                hasMedical = true;
-            }
-        } else {
+        char answer = input.next().charAt(0);
+        teacher = (answer == 'y' || answer == 'Y');
+
+        if (!teacher) {
             System.out.println("You are not eligable for a vaccination.");
             input.close();
             return;
         }
 
-        if (isOver65 || hasMedical)
-            eligible = true;
+        System.out.println("Are you over 65 years old? (Y/N): ");
+        answer = input.next().charAt(0);
+        isOver65 = (answer == 'y' || answer == 'Y');
+        System.out.println("Do you have a medical condition? (Y/N): ");
+        answer = input.next().charAt(0);
+        hasMedical = (answer == 'y' || answer == 'Y');
+
+        eligible = (isOver65 || hasMedical) ? "Yes" : "No";
 
         input.close();
 
