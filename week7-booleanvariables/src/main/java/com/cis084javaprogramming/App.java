@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        boolean teacher, isOver65, hasMedical, eligible;
+        boolean teacher = false, isOver65 = false, hasMedical = false, eligible = false;
 
         Scanner input = new Scanner(System.in);
         System.out.println("Are you a teacher? (Y/N): ");
@@ -36,5 +36,10 @@ public class App {
         }
 
         input.close();
+
+        System.out.println("Is a teacher: " + teacher);
+        System.out.println("Is over 65 years old: " + isOver65);
+        System.out.println("Has a medical condition: " + hasMedical);
+        System.out.println("Can be given a vaccination: " + eligible);
     }
 }
