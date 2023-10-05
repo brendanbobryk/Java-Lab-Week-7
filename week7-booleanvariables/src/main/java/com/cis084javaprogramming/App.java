@@ -24,7 +24,7 @@ public class App {
         // If the user is not a teacher, then the result is given and the program stops
         teacher = (answer == 'y' || answer == 'Y');
         if (!teacher) {
-            System.out.println("You are not eligable for a vaccination.");
+            System.out.println("You are not eligible for a vaccination.");
             input.close();
             return;
         }
