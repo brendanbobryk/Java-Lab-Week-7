@@ -35,6 +35,9 @@ public class App {
             return;
         }
 
+        if (isOver65 || hasMedical)
+            eligible = true;
+
         input.close();
 
         System.out.println("Is a teacher: " + teacher);
